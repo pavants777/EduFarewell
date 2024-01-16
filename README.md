@@ -2,6 +2,6 @@
 
 <div align="center">
  <span>
- <img src="https://github.com/pavants777/CLC-College-leaving-certificate-/blob/main/images/CLC.png" alt="Problem Statement" width="150" height="auto" />
+ <img src="https://github.com/pavants777/CLC-College-leaving-certificate-/blob/main/images/CLC.png" alt="Problem Statement" height="auto" />
  </span>
  </div>
