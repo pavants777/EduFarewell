@@ -1,6 +1,6 @@
-# clc
+# CLC College Leaving Certificate 
 
-A new Flutter project.
+
 
 ## Getting Started
 
