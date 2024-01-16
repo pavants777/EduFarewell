@@ -35,7 +35,7 @@ By following these guidelines, we can maintain a productive and collaborative op
 /*
    git clone https://github.com/pavants777/CLC-College-leaving-certificate-.git
 
-   cd appchat
+   cd clc
 
    flutter pub get
 
