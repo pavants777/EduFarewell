@@ -33,7 +33,7 @@ By following these guidelines, we can maintain a productive and collaborative op
 
 ## ©️ Clone 
 /*
-   git clone https://github.com/pavants777/appchat.git
+   git clone https://github.com/pavants777/CLC-College-leaving-certificate-.git
 
    cd appchat
 
