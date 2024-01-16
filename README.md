@@ -28,4 +28,19 @@ By following these guidelines, we can maintain a productive and collaborative op
 -   [Pavan Gowda T S](https://github.com/pavants777)
 
 ## :v: Collaborators 
--   
+
+-
+
+## Clone 
+/*
+   git clone https://github.com/pavants777/appchat.git
+
+   cd appchat
+
+   flutter pub get
+
+   flutter build apk   // if your need apk
+ 
+   flutter run   // to run the flutter in emulators
+
+*/  
