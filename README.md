@@ -1,16 +1,47 @@
-# clc
+# CLC College Leaving Certificate 
 
-A new Flutter project.
+<div align="center">
+ <span>
+ <img src="https://github.com/pavants777/CLC-College-leaving-certificate-/blob/main/images/CLC.png" alt="Problem Statement" height="auto" />
+ </span>
+ </div>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## :computer: Technologies Used
 
-A few resources to get you started if this is your first Flutter project:
+1.  **Flutter** - Mobile application
+2.  **Firebase** - Authentication, Database, Storage and Cloud functions.
+3.  **ZegoCloud** - Real-Time Communication (Aduio Meeting Of College office Staf and Student),
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## :raised_hands: Contributing
+:star: Don't forget to star this repository if you find it useful! :star:
+
+Thank you for considering contributing to this project! Contributions are highly appreciated and welcomed. To ensure a smooth collaboration, Contact Maintainers or Collaborators.
+
+We appreciate your contributions and look forward to working with you to make this project even better!
+
+By following these guidelines, we can maintain a productive and collaborative open-source environment. Thank you for your support!
+
+## :v: Maintainers
+
+-   [Pavan Gowda T S](https://github.com/pavants777)
+
+## :v: Collaborators 
+
+-  
+-   
+
+## ©️ Clone 
+/*
+   git clone https://github.com/pavants777/CLC-College-leaving-certificate-.git
+
+   cd clc
+
+   flutter pub get
+
+   flutter build apk   // if your need apk
+ 
+   flutter run   // to run the flutter in emulators
+
+*/  
