@@ -29,7 +29,7 @@ By following these guidelines, we can maintain a productive and collaborative op
 
 ## :v: Collaborators 
 
--   [Akash H S](https://github.com/Akash-h-s)
+-  
 -   
 
 ## ©️ Clone 
