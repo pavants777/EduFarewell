@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ThemeClass {
-  static Color lightThemePrimary = Color(0xFFC2570A);
+  static Color lightThemePrimary = Color(0xFFFFB74D);
   static Color lightThemeSecondary = Color(0xFFFBF7F4);
   static Color darkThemePrimary = Color(0xFFFBF7F4);
-  static Color darkThemeSecondary = Color(0xFFC2570A);
+  static Color darkThemeSecondary = Color(0xFFFFB74D);
 
   static ThemeData lightTheme = ThemeData(
     colorScheme: ColorScheme.light().copyWith(

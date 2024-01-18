@@ -1,4 +1,4 @@
-import 'package:clc/pages.dart/startPage.dart';
+import 'package:clc/pages.dart/spalshScreen/startPage.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
