@@ -1,3 +1,4 @@
+import 'package:clc/widgets/spalshScreenWidgets.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,7 @@ class _StartPageState extends State<StartPage> {
               dotsCount: _page.length,
               position: activePage,
               decorator: DotsDecorator(
-                color: Colors.black,
+                color: Theme.of(context).colorScheme.secondary,
                 activeColor: Theme.of(context).colorScheme.secondary,
                 size: Size.square(9),
                 activeSize: Size(27.0, 9.0),
@@ -68,23 +69,56 @@ class Page1 extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      child: Image.asset('assets/logo.png'),
+      child: CompanyLog(double.infinity, double.infinity),
     );
   }
 }
 
 class Page2 extends StatelessWidget {
-  const Page2({super.key});
+  Page2({super.key});
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/02.jpg'),
-          fit: BoxFit.contain,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CompanyLog(150.0, 150.0),
+            SizedBox(
+              height: 10,
+            ),
+            TextLine("Student LogIn", 30, context),
+            SizedBox(
+              height: 30,
+            ),
+            customTextField(_email, "Email", Icon(Icons.email), context),
+            SizedBox(
+              height: 30,
+            ),
+            customTextField(_password, "Password", Icon(Icons.key), context,
+                isTrue: true),
+            SizedBox(
+              height: 30,
+            ),
+            customButton(() {}, "LOGIN", context),
+            SizedBox(
+              height: 30,
+            ),
+            UseSignIn(() {}, context),
+            SizedBox(
+              height: 30,
+            ),
+            styleWidget(context),
+            SizedBox(
+              height: 30,
+            ),
+            bottomLogo(),
+          ],
         ),
       ),
     );
@@ -92,32 +126,51 @@ class Page2 extends StatelessWidget {
 }
 
 class Page3 extends StatelessWidget {
-  const Page3({super.key});
+  Page3({super.key});
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Stack(
-      children: [
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/03.png'),
-              fit: BoxFit.fill,
-            ),
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CompanyLog(150.0, 150.0),
+          SizedBox(
+            height: 10,
           ),
-        ),
-        Positioned(
-          bottom: size.height * 0.1,
-          left: size.width * 0.35,
-          child: ElevatedButton(
-            onPressed: () {},
-            child: Text('Next Page'),
+          TextLine("College LogIn", 30, context),
+          SizedBox(
+            height: 30,
           ),
-        ),
-      ],
+          customTextField(_email, "Email", Icon(Icons.email), context),
+          SizedBox(
+            height: 30,
+          ),
+          customTextField(_password, "Password", Icon(Icons.key), context,
+              isTrue: true),
+          SizedBox(
+            height: 30,
+          ),
+          customButton(() {}, "LOGIN", context),
+          SizedBox(
+            height: 30,
+          ),
+          UseSignIn(() {}, context),
+          SizedBox(
+            height: 30,
+          ),
+          styleWidget(context),
+          SizedBox(
+            height: 30,
+          ),
+          bottomLogo(),
+        ],
+      ),
     );
   }
 }
