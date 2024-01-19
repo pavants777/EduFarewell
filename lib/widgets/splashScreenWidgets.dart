@@ -83,7 +83,7 @@ Widget UseSignIn(onTap, context) {
       GestureDetector(
         onTap: onTap,
         child: Text(
-          ' Sign In',
+          ' Register',
           style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Theme.of(context).colorScheme.secondary),

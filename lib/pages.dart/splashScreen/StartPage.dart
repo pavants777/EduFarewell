@@ -111,7 +111,7 @@ class Page2 extends StatelessWidget {
             ),
             UseSignIn(() {}, context),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             styleWidget(context),
             SizedBox(
@@ -147,7 +147,7 @@ class Page3 extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          customTextField(_email, "Email", Icon(Icons.email), context),
+          customTextField(_email, "College Email", Icon(Icons.email), context),
           SizedBox(
             height: 30,
           ),
@@ -162,7 +162,7 @@ class Page3 extends StatelessWidget {
           ),
           UseSignIn(() {}, context),
           SizedBox(
-            height: 30,
+            height: 10,
           ),
           styleWidget(context),
           SizedBox(
