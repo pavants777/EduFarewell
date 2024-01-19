@@ -14,31 +14,9 @@ class _StartPageState extends State<StartPage> {
   int activePage = 0;
 
   List<Widget> _page = [
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      child: Image.asset('assets/01.png'),
-    ),
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/02.jpg'),
-          fit: BoxFit.contain,
-        ),
-      ),
-    ),
-    Container(
-      width: double.infinity,
-      height: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/03.png'),
-          fit: BoxFit.fill,
-        ),
-      ),
-    ),
+    Page1(),
+    Page2(),
+    Page3(),
   ];
 
   @override
@@ -66,9 +44,10 @@ class _StartPageState extends State<StartPage> {
               dotsCount: _page.length,
               position: activePage,
               decorator: DotsDecorator(
-                activeColor: Colors.black,
+                color: Colors.black,
+                activeColor: Theme.of(context).colorScheme.secondary,
                 size: Size.square(9),
-                activeSize: Size(18.0, 9.0),
+                activeSize: Size(27.0, 9.0),
                 activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
@@ -81,8 +60,64 @@ class _StartPageState extends State<StartPage> {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: StartPage(),
-  ));
+class Page1 extends StatelessWidget {
+  const Page1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      child: Image.asset('assets/logo.png'),
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/02.jpg'),
+          fit: BoxFit.contain,
+        ),
+      ),
+    );
+  }
+}
+
+class Page3 extends StatelessWidget {
+  const Page3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    return Stack(
+      children: [
+        Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/03.png'),
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: size.height * 0.1,
+          left: size.width * 0.35,
+          child: ElevatedButton(
+            onPressed: () {},
+            child: Text('Next Page'),
+          ),
+        ),
+      ],
+    );
+  }
 }
