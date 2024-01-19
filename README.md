@@ -2,7 +2,7 @@
 
 <div align="center">
  <span>
-  <img src="" alt="LOGO OF APP" height="auto">
+  <img src="https://github.com/pavants777/CLC-College-leaving-certificate/blob/main/assets/logo.png" alt="LOGO OF APP" height="auto">
  <img src="https://github.com/pavants777/CLC-College-leaving-certificate-/blob/main/images/CLC.png" alt="Problem Statement" height="auto" />
  </span>
  </div>
