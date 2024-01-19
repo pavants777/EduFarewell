@@ -2,7 +2,9 @@
 
 <div align="center">
  <span>
-  <img src="" alt="LOGO OF APP" height="auto">
+  <h1>EduFarewell</h1>
+  <img src="https://github.com/pavants777/CLC-College-leaving-certificate/blob/main/assets/logo.png" alt="LOGO OF APP" height="auto">
+  <h1>Problem Statement</h1>
  <img src="https://github.com/pavants777/CLC-College-leaving-certificate-/blob/main/images/CLC.png" alt="Problem Statement" height="auto" />
  </span>
  </div>
