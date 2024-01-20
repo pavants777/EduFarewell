@@ -1,4 +1,5 @@
-import 'package:clc/widgets/spalshScreenWidgets.dart';
+import 'package:clc/Firebase/splash.dart';
+import 'package:clc/widgets/splashScreenWidgets.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
@@ -105,7 +106,9 @@ class Page2 extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            customButton(() {}, "LOGIN", context),
+            customButton(() {
+              SplashFunction.login(_email.text, _password.text, context);
+            }, "LOGIN", context),
             SizedBox(
               height: 30,
             ),
