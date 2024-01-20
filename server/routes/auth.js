@@ -24,7 +24,6 @@ router.post("/app/signup", async (req, res) => {
 
     user = await user.save();
     res.json(user);
-
   } catch (e) {
     res.status(500).json({ error: e.message });
   }

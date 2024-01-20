@@ -11,7 +11,6 @@ mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB is Connected"))
   .catch((error) => {
     console.error(`MongoDB connection error: ${error}`);
-    process.exit(1);
   });
 
 app.use(express.json());
