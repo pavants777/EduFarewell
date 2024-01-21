@@ -5,11 +5,7 @@ const authRouter = require("./routes/auth");
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-<<<<<<< HEAD
 
-const DB = "mongodb+srv://user1:test123@cluster0.bekbbhb.mongodb.net/?retryWrites=true&w=majority";
-
-=======
 const DB = "";
 
 >>>>>>> 879529123bb6a1b50178f7436ae1b0ad7f255a6c
