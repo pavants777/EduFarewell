@@ -5,7 +5,12 @@ const authRouter = require("./routes/auth");
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+<<<<<<< HEAD
 const DB = "mongodb+srv://user1:test123@cluster0.bekbbhb.mongodb.net/?retryWrites=true&w=majority";
+=======
+const DB = "";
+
+>>>>>>> fed49b069c45c85e3c0ab91b01ce721103919dbe
 mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB is Connected"))
   .catch((error) => {
