@@ -1,4 +1,5 @@
-import 'package:clc/Firebase/splash.dart';
+import 'package:clc/Services/auth_Services.dart';
+import 'package:clc/pages/splashScreen/SignUp.dart';
 import 'package:clc/widgets/splashScreenWidgets.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -79,6 +80,7 @@ class Page2 extends StatelessWidget {
   Page2({super.key});
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
+  AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -107,12 +109,20 @@ class Page2 extends StatelessWidget {
               height: 30,
             ),
             customButton(() {
-              SplashFunction.login(_email.text, _password.text, context);
+              print('Button Tap');
+              _auth.login(context, _email.text, _password.text);
             }, "LOGIN", context),
             SizedBox(
               height: 30,
             ),
-            UseSignIn(() {}, context),
+            UseSignIn("Don't have account ?", "  Register", () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SignUpPage(),
+                ),
+              );
+            }, context),
             SizedBox(
               height: 10,
             ),
@@ -163,7 +173,7 @@ class Page3 extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          UseSignIn(() {}, context),
+          UseSignIn("Don't have account ?", "  Register", () {}, context),
           SizedBox(
             height: 10,
           ),

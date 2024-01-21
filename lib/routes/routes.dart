@@ -1,5 +1,5 @@
-import 'package:clc/pages.dart/homepages/homepage.dart';
-import 'package:clc/pages.dart/splashScreen/startPage.dart';
+import 'package:clc/pages/homepages/homepage.dart';
+import 'package:clc/pages/splashScreen/StartPage.dart';
 import 'package:flutter/material.dart';
 
 class Routes {

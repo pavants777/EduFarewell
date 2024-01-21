@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const bcryptjs = require("bcryptjs"); 
 const jwt = require("jsonwebtoken");
-
-const User = require("../models/User"); 
+const auth = require("../middelwares/auth");
+const User = require("../models/User");
 
 router.post("/app/signup", async (req, res) => {
   try {
@@ -23,7 +23,8 @@ router.post("/app/signup", async (req, res) => {
     });
 
     user = await user.save();
-    res.json(user);
+    const token = jwt.sign({id : user._id},"PasswordKey");
+     res.json({token,...user._doc});
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -51,6 +52,32 @@ router.post("/app/login",async (req,res)=>{
    catch(e){
     res.status(500).json({ error : e.message});
    }
+});
+
+router.post('/tokenIsVaild',async (req,res)=>{
+   try{
+      const token = req.header("x-auth-token");
+      if(!token){
+        return res.status(400).json({msg : "Error In Token"});
+      }
+      const verified = jwt.verify(token,"PasswordKey");
+      if(!verified){
+        return res.status(400).json({msg : "Error In Verified"});
+      }
+      const user = await User.findById(verified.id);
+      if(!user) return res.status(400).json({msg : "Error In User"});
+      res.json(true);
+   }catch(e){
+      res.status(500).json({error : "Invalid Token"})
+   }
+});
+
+
+// get User 
+
+router.get('/',auth,async (req,res)=>{
+   const user = await User.findById(req.user);
+   res.json({...user._doc,token : req.user});
 });
 
 module.exports = router;

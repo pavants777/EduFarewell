@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget CompanyLog(width, height) {
+Widget CompanyLog(double width, double height) {
   return Image.asset(
     'assets/logo1.png',
     width: width,
@@ -50,7 +50,7 @@ Widget customTextField(TextEditingController _controller, String name,
   );
 }
 
-Widget customButton(onTap, String name, context) {
+Widget customButton(VoidCallback onTap, String name, context) {
   return GestureDetector(
     onTap: onTap,
     child: Container(
@@ -71,19 +71,19 @@ Widget customButton(onTap, String name, context) {
   );
 }
 
-Widget UseSignIn(onTap, context) {
+Widget UseSignIn(String text, text1, VoidCallback onTap, context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       Text(
-        "Don't hava account ?",
+        text,
         style: TextStyle(color: Theme.of(context).colorScheme.secondary),
       ),
       GestureDetector(
         onTap: onTap,
         child: Text(
-          ' Register',
+          text1,
           style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Theme.of(context).colorScheme.secondary),
