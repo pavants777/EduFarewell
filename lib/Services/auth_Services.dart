@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:clc/Provider/User_provider.dart';
 import 'package:clc/models/user.dart';
 import 'package:clc/pages/homepages/homepage.dart';
+import 'package:clc/pages/splashScreen/StartPage.dart';
+import 'package:clc/routes/routes.dart';
 import 'package:clc/widgets/Utils.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -138,5 +140,17 @@ class AuthService {
         GetXSnackbar('Error: $e');
       }
     }
+  }
+
+  Future<void> signOut(BuildContext context) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setString('x-auth-token', '');
+    User user = User(email: '', id: '', name: '', token: '', password: '');
+    var userPrvoider = Provider.of<UserProvider>(context, listen: false);
+    userPrvoider.setUserModel(user);
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => HomePageStart()),
+        (route) => false);
   }
 }

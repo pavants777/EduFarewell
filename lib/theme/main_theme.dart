@@ -21,6 +21,7 @@ class ThemeClass {
             MaterialStateProperty.resolveWith((states) => lightThemeSecondary),
       ),
     ),
+    iconTheme: IconThemeData(color: lightThemePrimary),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -35,5 +36,6 @@ class ThemeClass {
             MaterialStateProperty.resolveWith((states) => darkThemeSecondary),
       ),
     ),
+    iconTheme: IconThemeData(color: darkThemePrimary),
   );
 }
