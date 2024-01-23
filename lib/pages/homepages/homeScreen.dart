@@ -22,8 +22,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: _currentPage,
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         elevation: 10,
-        selectedItemColor: Colors.red,
+        selectedItemColor: Colors.lightGreen,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(

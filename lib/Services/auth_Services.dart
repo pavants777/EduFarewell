@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:clc/Provider/User_provider.dart';
 import 'package:clc/models/user.dart';
 import 'package:clc/pages/homepages/homepage.dart';
@@ -29,7 +28,7 @@ class AuthService {
       );
 
       http.Response res = await http.post(
-        Uri.parse('http://10.0.2.2:3000/app/signup'),
+        Uri.parse('https://clc-bakend.onrender.com/app/signup'),
         body: jsonEncode(user.toMap()),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
@@ -64,7 +63,7 @@ class AuthService {
     try {
       print('function call');
       http.Response res = await http.post(
-        Uri.parse('http://10.0.2.2:3000/app/login'),
+        Uri.parse('https://clc-bakend.onrender.com/app/login'),
         body: jsonEncode({
           'email': email,
           'password': password,
@@ -113,7 +112,7 @@ class AuthService {
       }
 
       var tokenRes = await http.post(
-        Uri.parse('http://10.0.2.2:3000/tokenIsVaild'),
+        Uri.parse('https://clc-bakend.onrender.com/tokenIsVaild'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           'x-auth-token': token,
@@ -123,7 +122,7 @@ class AuthService {
       print(response);
       if (response == true) {
         http.Response userRes = await http.get(
-          Uri.parse('http://10.0.2.2:3000/'),
+          Uri.parse('https://clc-bakend.onrender.com/'),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
             'x-auth-token': token,

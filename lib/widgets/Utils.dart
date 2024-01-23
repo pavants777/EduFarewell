@@ -6,16 +6,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar_controller.dart';
 import 'package:http/http.dart' as http;
 
-// void showSnackbar(BuildContext context, String message) {
-//   final snackBar = SnackBar(
-//     content: Text(message),
-//     duration: Duration(seconds: 3),
-//   );
-//   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-// }
-
 SnackbarController GetXSnackbar(String message) {
   return Get.snackbar("Error", message,
+      colorText: Colors.white,
       duration: Duration(seconds: 5),
       dismissDirection: DismissDirection.horizontal,
       isDismissible: true);
