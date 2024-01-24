@@ -2,10 +2,12 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:clc/Provider/User_provider.dart';
 import 'package:clc/models/user.dart';
+import 'package:clc/pages/homepages/homeScreen.dart';
 import 'package:clc/pages/homepages/homepage.dart';
 import 'package:clc/pages/splashScreen/StartPage.dart';
 import 'package:clc/routes/routes.dart';
 import 'package:clc/widgets/Utils.dart';
+import 'package:clc/widgets/mainScreenWidgets.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -62,7 +64,6 @@ class AuthService {
 
   void login(BuildContext context, String email, password) async {
     try {
-      print('function call');
       http.Response res = await http.post(
         Uri.parse('https://clc-bakend.onrender.com/app/login'),
         body: jsonEncode({
@@ -153,5 +154,53 @@ class AuthService {
         context,
         MaterialPageRoute(builder: (context) => HomePageStart()),
         (route) => false);
+  }
+
+// send otp to user email
+  Future<void> sendOTP(BuildContext context) async {
+    var userPrvoider = Provider.of<UserProvider>(context, listen: false).user;
+    var user = new User(
+        email: userPrvoider.email,
+        id: '',
+        name: userPrvoider.name,
+        token: '',
+        isEmail: userPrvoider.isEmail,
+        password: userPrvoider.password);
+    http.Response res = await http.post(
+      Uri.parse('https://clc-bakend.onrender.com/SendOTP'),
+      body: jsonEncode(user.toMap()),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    );
+  }
+
+// verification of otp
+  Future<void> verificationOfOTP(BuildContext context, String otp) async {
+    var userPrvoider = Provider.of<UserProvider>(context, listen: false);
+    print(otp);
+    http.Response res = await http.post(
+      Uri.parse('https://clc-bakend.onrender.com/verification'),
+      body: jsonEncode({
+        'userId': userPrvoider.user.email,
+        'otp': otp,
+      }),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    );
+    print(res.statusCode);
+
+    httpErrorHandle(
+      response: res,
+      context: context,
+      onSuccess: () async {
+        userPrvoider.verificationOfEmail();
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+            (route) => false);
+      },
+    );
   }
 }

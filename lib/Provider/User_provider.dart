@@ -27,6 +27,11 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void verificationOfEmail() {
+    _user.isEmail = true;
+    notifyListeners();
+  }
+
   void dispose() {
     _userTokenController.close();
     super.dispose();

@@ -126,7 +126,13 @@ Widget emailWidget(bool isEmail, BuildContext context) {
     );
   }
   return GestureDetector(
-    onTap: () {
+    onTap: () async {
+      AuthService _auth = new AuthService();
+      _auth.sendOTP(context);
+      //
+      // await Future.delayed(
+      //   Duration(seconds: 5),
+      // );
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => EmailVerficiation()),

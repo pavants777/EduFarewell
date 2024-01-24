@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -25,7 +24,7 @@ void httpErrorHandle({
       break;
     case 400:
       print("${jsonDecode(response.body)['msg'] ?? 'Unknown error'}");
-      GetXSnackbar(jsonDecode(response.body)['msg']);
+      GetXSnackbar(jsonDecode(response.body)['msg'] ?? "Erro Will connecting");
       break;
     case 500:
       print("${jsonDecode(response.body)['error'] ?? 'Unknown error'}");
