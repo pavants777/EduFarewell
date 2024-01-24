@@ -21,6 +21,12 @@ class HomeWidget extends StatelessWidget {
                   color: Theme.of(context).colorScheme.secondary),
             ),
             Text(
+              'isEmail :  ${_user.isEmail}',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.secondary),
+            ),
+            Text(
               '${_user.id}',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -71,22 +77,6 @@ class MeetingWidget extends StatelessWidget {
       body: Center(
         child: Text(
           'Meeting Widget',
-          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
-        ),
-      ),
-    );
-  }
-}
-
-class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'Profile Widget',
           style: TextStyle(color: Theme.of(context).colorScheme.secondary),
         ),
       ),

@@ -5,7 +5,8 @@ import 'package:clc/models/user.dart';
 import 'package:flutter/material.dart';
 
 class UserProvider extends ChangeNotifier {
-  User _user = User(email: '', id: '', name: '', token: '', password: '');
+  User _user = User(
+      email: '', id: '', name: '', token: '', password: '', isEmail: false);
   final StreamController<String?> _userTokenController =
       StreamController<String?>.broadcast();
 

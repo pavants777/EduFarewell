@@ -1,3 +1,4 @@
+import 'package:clc/pages/Profile/profile.dart';
 import 'package:clc/widgets/mainScreenWidgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,7 +14,6 @@ class _HomePageState extends State<HomePage> {
   final HomeWidget _homeWidget = const HomeWidget();
   final SearchWidget _searchWidget = const SearchWidget();
   final MeetingWidget _meetingWidget = const MeetingWidget();
-  final ProfileWidget _profileWidget = const ProfileWidget();
 
   Widget _currentPage = const HomeWidget();
 
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
         _changePage(_meetingWidget);
         break;
       case 3:
-        _changePage(_profileWidget);
+        _changePage(ProfileWidget());
         break;
       default:
         break;

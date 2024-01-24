@@ -25,6 +25,7 @@ class AuthService {
         name: name,
         token: '',
         password: password,
+        isEmail: false,
       );
 
       http.Response res = await http.post(
@@ -144,7 +145,8 @@ class AuthService {
   Future<void> signOut(BuildContext context) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.setString('x-auth-token', '');
-    User user = User(email: '', id: '', name: '', token: '', password: '');
+    User user = User(
+        email: '', id: '', name: '', token: '', password: '', isEmail: false);
     var userPrvoider = Provider.of<UserProvider>(context, listen: false);
     userPrvoider.setUserModel(user);
     Navigator.pushAndRemoveUntil(
